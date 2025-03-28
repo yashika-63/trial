@@ -33,6 +33,10 @@ jobs:
                       cd ec2-user
                       cd trial2
                       sudo yum install nodejs npm -y
-                      npm install
-                      npm install react-toastify
-                      pm2 restart next-js
+                       npm install
+                        sudo npm run build
+                        cd dist
+                        sudo rm -rf /var/www/html/reactapp7/*
+                        sudo mv * /var/www/html/reactapp7
+                        sudo systemctl restart httpd
+                      
